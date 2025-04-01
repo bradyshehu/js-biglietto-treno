@@ -16,18 +16,22 @@ console.log(validAgeOfPassenger);
 const price = numberToTravel * 0.21;
 console.log(price);
 
+let discountPercentage;
+
 let outputText;
 
 // SVOLGIMENTO
 
 if (validNumberToTravel === true && validAgeOfPassenger === true) {
   if (ageOfPassenger < 18) {
-    const discountAmount = (price * 20) / 100;
+    discountPercentage = 20;
+    const discountAmount = (price * discountPercentage) / 100;
     const discountedPrice = (price - discountAmount).toFixed(2);
     console.log("Sconto di €", discountAmount);
     outputText = "€ " + discountedPrice;
   } else if (ageOfPassenger > 65) {
-    const discountAmount = (price * 40) / 100;
+    discountPercentage = 40;
+    const discountAmount = (price * discountPercentage) / 100;
     const discountedPrice = (price - discountAmount).toFixed(2);
     console.log("Sconto di €", discountAmount);
     outputText = "€ " + discountedPrice;
